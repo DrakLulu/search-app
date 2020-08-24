@@ -4,7 +4,10 @@ import './index.css';
 import { useState, useEffect } from 'react';
 import Json from "./json.json";
 
-
+/**
+ * Fonction to create the html image elements of the API GET request!
+ * @param {*} param the API GET answer json.
+ */
 function RenderJson(param) {
   console.log(param.hits);
   if(param.hits) {
@@ -12,9 +15,12 @@ function RenderJson(param) {
   }else return <p>No images</p>;
 }
 
-
+/**
+ * Custom hook to get the API answer for the user request and display it
+ * @param {*} params the request the user enter in the search bar (string)
+ */
 function useGetData(params) {
-  var API_KEY = '18014975-e304a8e046e40ede228cd6197';
+  var API_KEY = '17555297-46a99d3dc7abf78679ec9e640';
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState("false");
 
@@ -40,6 +46,9 @@ function useGetData(params) {
 
 }
 
+/**
+ * The app component !
+ */
 function App() {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
@@ -57,7 +66,7 @@ function App() {
           </form>
         
       </div>
-      {loading === "false" ? (<div><p>Search for flowers !</p><div className="row">{RenderJson(Json)}</div></div>
+      {loading === "false" ? (<div><p>Search for flowers like theses!</p><div className="row">{RenderJson(Json)}</div></div>
             ) : (
                   <div className="row">
                     {RenderJson(result)}
@@ -67,6 +76,9 @@ function App() {
   );
 }
 
+/**
+ * React render to display beautiful flowers images ! 
+ */
 ReactDOM.render(
   <App />,
   document.getElementById('root') 

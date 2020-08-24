@@ -1,16 +1,11 @@
-
 * {
   box-sizing: border-box;
-}
-
-#text {
-  border-color: black;
-  border: 1px solid;
 }
 
 .topnav {
   overflow: hidden;
   background-color: #e9e9e9;
+  margin-bottom: 2em;
 }
 
 .topnav input[type=text] {
@@ -18,6 +13,11 @@
   margin-top: 8px;
   font-size: 17px;
   border: none;
+}
+
+#text {
+  border-color: black;
+  border: 1px solid;
 }
 
 .row {
